@@ -1,0 +1,3 @@
+/home/deniii/Git/Github/TDTS04/Lab 2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/deniii/Git/Github/TDTS04/Lab 2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/deniii/Git/Github/TDTS04/Lab 2/cmake-build-debug/CMakeFiles/proxy.dir
