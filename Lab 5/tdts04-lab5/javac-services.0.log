@@ -1,0 +1,4 @@
+INFO	?	main	2017-03-06T14:47:34.544Z	org.javacs.Main#connectToNode	Connected to parent using socket on port 55282
+INFO	?	main	2017-03-06T14:47:35.148Z	org.javacs.JavaLanguageServer#doLint	Lint [/home/chrved/code/TDTS04/Lab 5/tdts04-lab5/ChatClient.java]
+INFO	?	main	2017-03-06T14:47:35.236Z	org.javacs.JavaLanguageServer#doLint	Lint [/home/chrved/code/TDTS04/Lab 5/tdts04-lab5/ChatServer.java]
+INFO	?	main	2017-03-06T14:47:41.693Z	org.javacs.Main#run	Connection closed

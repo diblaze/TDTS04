@@ -1,0 +1,125 @@
+     12 2017-01-18 16:09:16.192814744 130.236.187.240       128.119.245.12        HTTP     559    GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1 
+
+Frame 12: 559 bytes on wire (4472 bits), 559 bytes captured (4472 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38080 (38080), Dst Port: 80 (80), Seq: 1, Ack: 1, Len: 491
+Hypertext Transfer Protocol
+    GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n]
+        Request Method: GET
+        Request URI: /wireshark-labs/HTTP-wireshark-file2.html
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    Pragma: no-cache\r\n
+    Cache-Control: no-cache\r\n
+    Upgrade-Insecure-Requests: 1\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/55.0.2883.87 Chrome/55.0.2883.87 Safari/537.36\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8,sv;q=0.6\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html]
+    [HTTP request 1/2]
+    [Response in frame: 14]
+    [Next request in frame: 16]
+
+     14 2017-01-18 16:09:16.305305404 128.119.245.12        130.236.187.240       HTTP     798    HTTP/1.1 200 OK  (text/html)
+
+Frame 14: 798 bytes on wire (6384 bits), 798 bytes captured (6384 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 38080 (38080), Seq: 1, Ack: 492, Len: 730
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 200 OK\r\n]
+        Request Version: HTTP/1.1
+        Status Code: 200
+        Response Phrase: OK
+    Date: Wed, 18 Jan 2017 15:09:16 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 mod_perl/2.0.10 Perl/v5.16.3\r\n
+    Last-Modified: Wed, 18 Jan 2017 06:59:02 GMT\r\n
+    ETag: "173-54658f3a266c8"\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 371\r\n
+    Keep-Alive: timeout=5, max=100\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=UTF-8\r\n
+    \r\n
+    [HTTP response 1/2]
+    [Time since request: 0.112490660 seconds]
+    [Request in frame: 12]
+    [Next request in frame: 16]
+    [Next response in frame: 18]
+Line-based text data: text/html
+    \n
+    <html>\n
+    \n
+    Congratulations again!  Now you've downloaded the file lab2-2.html. <br>\n
+    This file's last modification date will not change.  <p>\n
+    Thus  if you download this multiple times on your browser, a complete copy <br>\n
+    will only be sent once by the server due to the inclusion of the IN-MODIFIED-SINCE<br>\n
+    field in your browser's HTTP GET request to the server.\n
+    \n
+    </html>\n
+
+     16 2017-01-18 16:09:16.314943954 130.236.187.240       128.119.245.12        HTTP     530    GET /favicon.ico HTTP/1.1 
+
+Frame 16: 530 bytes on wire (4240 bits), 530 bytes captured (4240 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38080 (38080), Dst Port: 80 (80), Seq: 492, Ack: 731, Len: 462
+Hypertext Transfer Protocol
+    GET /favicon.ico HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /favicon.ico HTTP/1.1\r\n]
+        Request Method: GET
+        Request URI: /favicon.ico
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    Pragma: no-cache\r\n
+    Cache-Control: no-cache\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/55.0.2883.87 Chrome/55.0.2883.87 Safari/537.36\r\n
+    Accept: image/webp,image/*,*/*;q=0.8\r\n
+    Referer: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8,sv;q=0.6\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/favicon.ico]
+    [HTTP request 2/2]
+    [Prev request in frame: 12]
+    [Response in frame: 18]
+
+     18 2017-01-18 16:09:16.426864464 128.119.245.12        130.236.187.240       HTTP     552    HTTP/1.1 404 Not Found  (text/html)
+
+Frame 18: 552 bytes on wire (4416 bits), 552 bytes captured (4416 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 38080 (38080), Seq: 731, Ack: 954, Len: 484
+Hypertext Transfer Protocol
+    HTTP/1.1 404 Not Found\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 404 Not Found\r\n]
+        Request Version: HTTP/1.1
+        Status Code: 404
+        Response Phrase: Not Found
+    Date: Wed, 18 Jan 2017 15:09:16 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 mod_perl/2.0.10 Perl/v5.16.3\r\n
+    Content-Length: 209\r\n
+    Keep-Alive: timeout=5, max=99\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=iso-8859-1\r\n
+    \r\n
+    [HTTP response 2/2]
+    [Time since request: 0.111920510 seconds]
+    [Prev request in frame: 12]
+    [Prev response in frame: 14]
+    [Request in frame: 16]
+Line-based text data: text/html
+    <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">\n
+    <html><head>\n
+    <title>404 Not Found</title>\n
+    </head><body>\n
+    <h1>Not Found</h1>\n
+    <p>The requested URL /favicon.ico was not found on this server.</p>\n
+    </body></html>\n

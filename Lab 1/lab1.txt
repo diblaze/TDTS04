@@ -1,0 +1,86 @@
+1. The Basic HTTP GET/response interaction: source p1.txt
+
+    1.Is your browser running HTTP version 1.0 or 1.1? What version of HTTP is the server running?
+     - Browser HTTP 1.1, Server HTTP 1.1
+
+    2. What languages (if any) does your browser indicate that it can accept to the server? In the captured session, what other information (if any) does the browser provide the server with regarding the user/browser?
+     - text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+     - http.accept_encoding == "gzip, deflate, sdch"
+     - en-US,en;q=0.8,sv;q=0.6
+
+    3. What is the IP address of your computer? Of the gaia.cs.umass.edu server?
+     - 130.236.187.240
+     - gaia = 128.119.245.12
+
+    4. What is the status code returned from the server to your browser?
+     - HTTP 1.1 200 OK
+     
+    5. When was the HTML file that you are retrieving last modified at the server?
+     - Wed, 18 Jan 2017 06:59:02 GMT
+     
+    6. How many bytes of content are being returned to your browser?
+     - 128 byte
+     
+    7. By inspecting the raw data in the "packet bytes" pane, do you see any http headers within the data that are not displayed in the "packet details" pane? If so, name one.
+    - Cant find any data in the "packet bytes" pane thats not in the "packet details" pane. All is there. Found "\n" thas not showing up.
+
+2. The HTTP CONDITIONAL GET/response interaction
+
+    8. Inspect the contents of the first HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE” line in the HTTP GET?
+    - No there is no “IF-MODIFIED-SINCE”
+
+    9. Inspect the contents of the server response. Did the server explicitly return the contents of the file? How can you tell?
+     - The server did return the contents of the file because it also sent a HTTP status code 200 OK.
+
+    10. Now inspect the contents of the second HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET? If so, what information follows the “IF-MODIFIED-SINCE:” header?
+     - “IF-MODIFIED-SINCE:” exists and have the value: If-Modified-Since: Wed, 18 Jan 2017 06:59:02 GMT.
+     This means the file was last modified on the server at the date shown.
+
+    11. What is the HTTP status code and phrase returned from the server in response to this second HTTP GET? Did the server explicitly return the contents of the file? Explain.
+     - Response code was 304, this tells the client that has not been any change since the last time and no new file (content) is sent.
+
+Task B: By answering 8-11, we learned that the HTTP protocol has implementations that "optimizes" the server-client performance by eliminating unnecessary requests, such as sending a file the client already have cached. 
+If the cached file is older than the one on the server, then the server will send a new version of the file.
+
+3. Retrieving Long Documents: source p2.txt
+12 How many HTTP GET request messages were sent by your browser?
+ - 2
+13 How many data-containing TCP segments were needed to carry the single HTTP response?
+ - 3 segments for html-page. 
+
+14 What is the status code and phrase associated with the response to the HTTP GET request?
+
+    - HTTP/1.1 200 OK
+
+15 Is there any HTTP header information in the transmitted data associated with TCP segmentation? For this question you may want to think about at what layer each protocol operates, and how the protocols at the different layers interoperate.
+- No, HTTP header information is not applicable to the TCP layer.
+
+Task C: By answering 12-15, we can observe the following: If the requested resource from the server is deemed to be too large for a single packet, the server will break the file down in several packets for easier transmission.
+When the client gets all of the packets of the broken up file, the file will be reassembeled. However, TCP does not know anything about the HTTP request that was made, TCP only cares about transferring the data, nothing else.
+
+16. How many HTTP GET request messages were sent by your browser? To which Internet addresses were these GET requests sent? Source p5.txt
+- 5 GET Requests were made. When retreiving the picture "cover_5th_ed.jpg", the server redirected the GET by sending back the right URL within the HTTP 302 Found which made the browser call another GET to the right URL.
+http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html
+http://gaia.cs.umass.edu/pearson.png
+http://manic.cs.umass.edu/~kurose/cover_5th_ed.jpg
+http://caite.cs.umass.edu/~kurose/cover_5th_ed.jpg
+http://gaia.cs.umass.edu/favicon.ico
+        
+17. Can you tell whether your browser downloaded the two images serially, or whether they were downloaded from the two web sites in parallel? Explain.
+- The images were downloaded serially because the GET's were sent on different timecodes. This means one .jpg were downloaded first and then another GET was sent for the second .jpg.
+
+Task D: By answering 16-17, we can conclude the server resolved the client HTTP requests serially because the packets were sent on two different timecodes, and also the packet numbers show us that the packets were not started at the same time.
+
+18.
+- HTTP/1.1 401 Unauthorized. This tells the browser that the server is expecting a username and a login. The browser asks the user for a username and password and then forwards it to the server with another GET request.
+
+19.
+- The field "Authorization" was sent with the value "Basic Og==\r\n". The field will then be used by the server to check username and password, and will then grant access if correct.
+
+20.
+- The "Keep-alive" field will use less resources in terms of less connections made by the client and server. This is a typical "serial" downloading. (downloads one file at the time)
+The "Close" field will use more resources in terms of more open connection between client and server, and this is typically used to download in "paralell". (able to download multiple files at the same time)
+
+Knowledge of how to use "Connection:" header, will be useful for Lab2 when we develop a proxy because we can then implement a similar thing for our proxy.
+
+

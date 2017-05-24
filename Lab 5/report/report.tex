@@ -1,0 +1,37 @@
+\documentclass{mall}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\newcommand{\version}{Version 1.0}
+\author{Christer Vesterlund, \url{chrve180@student.liu.se}\\
+  Denis I. Blazevic \url{denbl369@student.liu.se}}
+\title{Assignment 5:\\Real-time chat and Othello \\(using Corba)}
+\date{2017-03-23}
+\rhead{Christer Vesterlund\\Denis I. Blazevic}
+
+\begin{document}
+\projectpage
+%\tableofcontents
+\newpage 
+
+\section{Assignment}
+The assignment was to implement a simple version of a strategy game called Othello. (Alternatively, you can implement a version of the game "five in a row".). We chose to to implement “five in a row”. In the following two section we will answer the the questions that was asked.
+\subsection{Question 1.}
+Explain what is the purpose of the name server that is being used by the chat system. How would a call by the client have looked like if the name server would not have existed?\\
+
+\setlength{\parindent}{0mm}
+\textbf{Answer:}\\
+The name server is used to get the information about each other easier, than having to manually configure the settings about the hosts in the applications. The name server is started, and then the server and clients connect to the name server and are able to find each other through the name server.
+
+If the name server did not exist, then the client would have to store all the information about the server and other applications, instead of calling the name server to get the information.
+\subsection{Question 2.}
+The server in the lab is using the callback function. This is one way of implementing asynchronous method calls in CORBA and does not affect how objects are implemented in the server. Please explain why this is the case. Are there other alternative options for how asynchronous calls can be implemented in CORBA?\\
+
+\setlength{\parindent}{0mm}
+\textbf{Answer:}\\
+With the current method of asynchronous calls in the lab, the server sends the response to the client without checking if the client is ready or not - the server does not care. The client will then have to accept the response when it gets it. 
+
+By using the polling-model instead, the server will send messages to the client, but the client can choose whether to accept it or not. The client can also decide when it will do the job required for the message. There is a really good document written about CORBA from Washington University in St.Louis -\\ \url{http://www.cs.wustl.edu/~schmidt/PDF/C++-report-col16.pdf}
+
+\end{document}
+ 

@@ -1,0 +1,236 @@
+No.     Time           Source                Destination           Protocol Length Info
+     15 1.026300982    192.168.0.8           128.119.245.12        HTTP     504    GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1 
+
+Frame 15: 504 bytes on wire (4032 bits), 504 bytes captured (4032 bits) on interface 0
+Ethernet II, Src: Giga-Byt_de:78:d2 (90:2b:34:de:78:d2), Dst: CompalBr_58:0f:b6 (dc:53:7c:58:0f:b6)
+Internet Protocol Version 4, Src: 192.168.0.8, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 40020, Dst Port: 80, Seq: 1, Ack: 1, Len: 438
+Hypertext Transfer Protocol
+    GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1\r\n
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    Upgrade-Insecure-Requests: 1\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.92 Safari/537.36 Vivaldi/1.6.689.34\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8,sv;q=0.6\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html]
+    [HTTP request 1/3]
+    [Response in frame: 19]
+    [Next request in frame: 21]
+
+No.     Time           Source                Destination           Protocol Length Info
+     19 1.163105586    128.119.245.12        192.168.0.8           HTTP     1139   HTTP/1.1 200 OK  (text/html)
+
+Frame 19: 1139 bytes on wire (9112 bits), 1139 bytes captured (9112 bits) on interface 0
+Ethernet II, Src: CompalBr_58:0f:b6 (dc:53:7c:58:0f:b6), Dst: Giga-Byt_de:78:d2 (90:2b:34:de:78:d2)
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.0.8
+Transmission Control Protocol, Src Port: 80, Dst Port: 40020, Seq: 1, Ack: 439, Len: 1073
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+    Date: Wed, 18 Jan 2017 18:36:13 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 mod_perl/2.0.10 Perl/v5.16.3\r\n
+    Last-Modified: Wed, 18 Jan 2017 06:59:02 GMT\r\n
+    ETag: "2ca-54658f3a25ef8"\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 714\r\n
+    Keep-Alive: timeout=5, max=100\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=UTF-8\r\n
+    \r\n
+    [HTTP response 1/3]
+    [Time since request: 0.136804604 seconds]
+    [Request in frame: 15]
+    [Next request in frame: 21]
+    [Next response in frame: 26]
+    File Data: 714 bytes
+Line-based text data: text/html
+
+No.     Time           Source                Destination           Protocol Length Info
+     21 1.173955201    192.168.0.8           128.119.245.12        HTTP     475    GET /pearson.png HTTP/1.1 
+
+Frame 21: 475 bytes on wire (3800 bits), 475 bytes captured (3800 bits) on interface 0
+Ethernet II, Src: Giga-Byt_de:78:d2 (90:2b:34:de:78:d2), Dst: CompalBr_58:0f:b6 (dc:53:7c:58:0f:b6)
+Internet Protocol Version 4, Src: 192.168.0.8, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 40020, Dst Port: 80, Seq: 439, Ack: 1074, Len: 409
+Hypertext Transfer Protocol
+    GET /pearson.png HTTP/1.1\r\n
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.92 Safari/537.36 Vivaldi/1.6.689.34\r\n
+    Accept: image/webp,image/*,*/*;q=0.8\r\n
+    Referer: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8,sv;q=0.6\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/pearson.png]
+    [HTTP request 2/3]
+    [Prev request in frame: 15]
+    [Response in frame: 26]
+    [Next request in frame: 124]
+
+No.     Time           Source                Destination           Protocol Length Info
+     26 1.309646993    128.119.245.12        192.168.0.8           HTTP     2229   HTTP/1.1 200 OK  (PNG)
+
+Frame 26: 2229 bytes on wire (17832 bits), 2229 bytes captured (17832 bits) on interface 0
+Ethernet II, Src: CompalBr_58:0f:b6 (dc:53:7c:58:0f:b6), Dst: Giga-Byt_de:78:d2 (90:2b:34:de:78:d2)
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.0.8
+Transmission Control Protocol, Src Port: 80, Dst Port: 40020, Seq: 2522, Ack: 848, Len: 2163
+[2 Reassembled TCP Segments (3611 bytes): #25(1448), #26(2163)]
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+    Date: Wed, 18 Jan 2017 18:36:13 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 mod_perl/2.0.10 Perl/v5.16.3\r\n
+    Last-Modified: Sat, 06 Aug 2016 10:08:14 GMT\r\n
+    ETag: "cc3-539645c7f1ee7"\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 3267\r\n
+    Keep-Alive: timeout=5, max=99\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: image/png\r\n
+    \r\n
+    [HTTP response 2/3]
+    [Time since request: 0.135691792 seconds]
+    [Prev request in frame: 15]
+    [Prev response in frame: 19]
+    [Request in frame: 21]
+    [Next request in frame: 124]
+    [Next response in frame: 126]
+    File Data: 3267 bytes
+Portable Network Graphics
+
+No.     Time           Source                Destination           Protocol Length Info
+     30 1.352663447    192.168.0.8           128.119.240.90        HTTP     489    GET /~kurose/cover_5th_ed.jpg HTTP/1.1 
+
+Frame 30: 489 bytes on wire (3912 bits), 489 bytes captured (3912 bits) on interface 0
+Ethernet II, Src: Giga-Byt_de:78:d2 (90:2b:34:de:78:d2), Dst: CompalBr_58:0f:b6 (dc:53:7c:58:0f:b6)
+Internet Protocol Version 4, Src: 192.168.0.8, Dst: 128.119.240.90
+Transmission Control Protocol, Src Port: 58002, Dst Port: 80, Seq: 1, Ack: 1, Len: 423
+Hypertext Transfer Protocol
+    GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n
+    Host: manic.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.92 Safari/537.36 Vivaldi/1.6.689.34\r\n
+    Accept: image/webp,image/*,*/*;q=0.8\r\n
+    Referer: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8,sv;q=0.6\r\n
+    \r\n
+    [Full request URI: http://manic.cs.umass.edu/~kurose/cover_5th_ed.jpg]
+    [HTTP request 1/1]
+    [Response in frame: 32]
+
+No.     Time           Source                Destination           Protocol Length Info
+     32 1.515500595    128.119.240.90        192.168.0.8           HTTP     522    HTTP/1.1 302 Found  (text/html)
+
+Frame 32: 522 bytes on wire (4176 bits), 522 bytes captured (4176 bits) on interface 0
+Ethernet II, Src: CompalBr_58:0f:b6 (dc:53:7c:58:0f:b6), Dst: Giga-Byt_de:78:d2 (90:2b:34:de:78:d2)
+Internet Protocol Version 4, Src: 128.119.240.90, Dst: 192.168.0.8
+Transmission Control Protocol, Src Port: 80, Dst Port: 58002, Seq: 1, Ack: 424, Len: 456
+Hypertext Transfer Protocol
+    HTTP/1.1 302 Found\r\n
+    Date: Wed, 18 Jan 2017 18:36:13 GMT\r\n
+    Server: Apache\r\n
+    Location: http://caite.cs.umass.edu/~kurose/cover_5th_ed.jpg\r\n
+    Content-Length: 234\r\n
+    Connection: close\r\n
+    Content-Type: text/html; charset=iso-8859-1\r\n
+    \r\n
+    [HTTP response 1/1]
+    [Time since request: 0.162837148 seconds]
+    [Request in frame: 30]
+    File Data: 234 bytes
+Line-based text data: text/html
+
+No.     Time           Source                Destination           Protocol Length Info
+     43 1.808703463    192.168.0.8           128.119.240.90        HTTP     489    GET /~kurose/cover_5th_ed.jpg HTTP/1.1 
+
+Frame 43: 489 bytes on wire (3912 bits), 489 bytes captured (3912 bits) on interface 0
+Ethernet II, Src: Giga-Byt_de:78:d2 (90:2b:34:de:78:d2), Dst: CompalBr_58:0f:b6 (dc:53:7c:58:0f:b6)
+Internet Protocol Version 4, Src: 192.168.0.8, Dst: 128.119.240.90
+Transmission Control Protocol, Src Port: 58008, Dst Port: 80, Seq: 1, Ack: 1, Len: 423
+Hypertext Transfer Protocol
+    GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n
+    Host: caite.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.92 Safari/537.36 Vivaldi/1.6.689.34\r\n
+    Accept: image/webp,image/*,*/*;q=0.8\r\n
+    Referer: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8,sv;q=0.6\r\n
+    \r\n
+    [Full request URI: http://caite.cs.umass.edu/~kurose/cover_5th_ed.jpg]
+    [HTTP request 1/1]
+    [Response in frame: 121]
+
+No.     Time           Source                Destination           Protocol Length Info
+    121 2.766187267    128.119.240.90        192.168.0.8           HTTP     1366   HTTP/1.1 200 OK  (JPEG JFIF image)
+
+Frame 121: 1366 bytes on wire (10928 bits), 1366 bytes captured (10928 bits) on interface 0
+Ethernet II, Src: CompalBr_58:0f:b6 (dc:53:7c:58:0f:b6), Dst: Giga-Byt_de:78:d2 (90:2b:34:de:78:d2)
+Internet Protocol Version 4, Src: 128.119.240.90, Dst: 192.168.0.8
+Transmission Control Protocol, Src Port: 80, Dst Port: 58008, Seq: 99913, Ack: 424, Len: 1300
+[38 Reassembled TCP Segments (101212 bytes): #47(1448), #49(4344), #51(2896), #53(5792), #55(2896), #57(1448), #59(4344), #61(2896), #63(5792), #65(1448), #67(2896), #69(1448), #71(1448), #73(1448), #75(2896), #77(5792), #79(1448), #81(1448]
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+    Date: Wed, 18 Jan 2017 18:36:14 GMT\r\n
+    Server: Apache\r\n
+    Last-Modified: Tue, 15 Sep 2009 18:23:27 GMT\r\n
+    ETag: "78004-18a68-473a1e0e6e5c0"\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 100968\r\n
+    Connection: close\r\n
+    Content-Type: image/jpeg\r\n
+    \r\n
+    [HTTP response 1/1]
+    [Time since request: 0.957483804 seconds]
+    [Request in frame: 43]
+    File Data: 100968 bytes
+JPEG File Interchange Format
+
+No.     Time           Source                Destination           Protocol Length Info
+    124 2.770627285    192.168.0.8           128.119.245.12        HTTP     475    GET /favicon.ico HTTP/1.1 
+
+Frame 124: 475 bytes on wire (3800 bits), 475 bytes captured (3800 bits) on interface 0
+Ethernet II, Src: Giga-Byt_de:78:d2 (90:2b:34:de:78:d2), Dst: CompalBr_58:0f:b6 (dc:53:7c:58:0f:b6)
+Internet Protocol Version 4, Src: 192.168.0.8, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 40020, Dst Port: 80, Seq: 848, Ack: 4685, Len: 409
+Hypertext Transfer Protocol
+    GET /favicon.ico HTTP/1.1\r\n
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.92 Safari/537.36 Vivaldi/1.6.689.34\r\n
+    Accept: image/webp,image/*,*/*;q=0.8\r\n
+    Referer: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8,sv;q=0.6\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/favicon.ico]
+    [HTTP request 3/3]
+    [Prev request in frame: 21]
+    [Response in frame: 126]
+
+No.     Time           Source                Destination           Protocol Length Info
+    126 2.904394401    128.119.245.12        192.168.0.8           HTTP     550    HTTP/1.1 404 Not Found  (text/html)
+
+Frame 126: 550 bytes on wire (4400 bits), 550 bytes captured (4400 bits) on interface 0
+Ethernet II, Src: CompalBr_58:0f:b6 (dc:53:7c:58:0f:b6), Dst: Giga-Byt_de:78:d2 (90:2b:34:de:78:d2)
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 192.168.0.8
+Transmission Control Protocol, Src Port: 80, Dst Port: 40020, Seq: 4685, Ack: 1257, Len: 484
+Hypertext Transfer Protocol
+    HTTP/1.1 404 Not Found\r\n
+    Date: Wed, 18 Jan 2017 18:36:15 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 mod_perl/2.0.10 Perl/v5.16.3\r\n
+    Content-Length: 209\r\n
+    Keep-Alive: timeout=5, max=98\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=iso-8859-1\r\n
+    \r\n
+    [HTTP response 3/3]
+    [Time since request: 0.133767116 seconds]
+    [Prev request in frame: 21]
+    [Prev response in frame: 26]
+    [Request in frame: 124]
+    File Data: 209 bytes
+Line-based text data: text/html

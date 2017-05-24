@@ -1,0 +1,701 @@
+      5 2017-01-18 16:21:54.911316307 130.236.187.240       128.119.245.12        TCP      76     38100 → 80 [SYN] Seq=0 Win=29200 Len=0 MSS=1460 SACK_PERM=1 TSval=500459 TSecr=0 WS=128
+
+Frame 5: 76 bytes on wire (608 bits), 76 bytes captured (608 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38100 (38100), Dst Port: 80 (80), Seq: 0, Len: 0
+    Source Port: 38100
+    Destination Port: 80
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 0    (relative sequence number)
+    Acknowledgment number: 0
+    Header Length: 40 bytes
+    Flags: 0x002 (SYN)
+    Window size value: 29200
+    [Calculated window size: 29200]
+    Checksum: 0xb48f [validation disabled]
+    Urgent pointer: 0
+    Options: (20 bytes), Maximum segment size, SACK permitted, Timestamps, No-Operation (NOP), Window scale
+
+      6 2017-01-18 16:21:55.022557675 128.119.245.12        130.236.187.240       TCP      76     80 → 38100 [SYN, ACK] Seq=0 Ack=1 Win=28960 Len=0 MSS=1460 SACK_PERM=1 TSval=3108650053 TSecr=500459 WS=128
+
+Frame 6: 76 bytes on wire (608 bits), 76 bytes captured (608 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 38100 (38100), Seq: 0, Ack: 1, Len: 0
+    Source Port: 80
+    Destination Port: 38100
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 0    (relative sequence number)
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 40 bytes
+    Flags: 0x012 (SYN, ACK)
+    Window size value: 28960
+    [Calculated window size: 28960]
+    Checksum: 0xd5ba [validation disabled]
+    Urgent pointer: 0
+    Options: (20 bytes), Maximum segment size, SACK permitted, Timestamps, No-Operation (NOP), Window scale
+    [SEQ/ACK analysis]
+
+      7 2017-01-18 16:21:55.022606957 130.236.187.240       128.119.245.12        TCP      68     38100 → 80 [ACK] Seq=1 Ack=1 Win=29312 Len=0 TSval=500487 TSecr=3108650053
+
+Frame 7: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38100 (38100), Dst Port: 80 (80), Seq: 1, Ack: 1, Len: 0
+    Source Port: 38100
+    Destination Port: 80
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 229
+    [Calculated window size: 29312]
+    [Window size scaling factor: 128]
+    Checksum: 0xb487 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+
+      8 2017-01-18 16:21:55.022968504 130.236.187.240       128.119.245.12        HTTP     559    GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1 
+
+Frame 8: 559 bytes on wire (4472 bits), 559 bytes captured (4472 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38100 (38100), Dst Port: 80 (80), Seq: 1, Ack: 1, Len: 491
+    Source Port: 38100
+    Destination Port: 80
+    [Stream index: 0]
+    [TCP Segment Len: 491]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 492    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 229
+    [Calculated window size: 29312]
+    [Window size scaling factor: 128]
+    Checksum: 0xb672 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+Hypertext Transfer Protocol
+    GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1\r\n]
+        Request Method: GET
+        Request URI: /wireshark-labs/HTTP-wireshark-file3.html
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    Pragma: no-cache\r\n
+    Cache-Control: no-cache\r\n
+    Upgrade-Insecure-Requests: 1\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/55.0.2883.87 Chrome/55.0.2883.87 Safari/537.36\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8,sv;q=0.6\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html]
+    [HTTP request 1/2]
+    [Response in frame: 14]
+    [Next request in frame: 16]
+
+      9 2017-01-18 16:21:55.134703091 128.119.245.12        130.236.187.240       TCP      68     80 → 38100 [ACK] Seq=1 Ack=492 Win=30080 Len=0 TSval=3108650165 TSecr=500487
+
+Frame 9: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 38100 (38100), Seq: 1, Ack: 492, Len: 0
+    Source Port: 80
+    Destination Port: 38100
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Acknowledgment number: 492    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 235
+    [Calculated window size: 30080]
+    [Window size scaling factor: 128]
+    Checksum: 0x7245 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+
+     10 2017-01-18 16:21:55.135651666 128.119.245.12        130.236.187.240       TCP      1516   [TCP segment of a reassembled PDU]
+
+Frame 10: 1516 bytes on wire (12128 bits), 1516 bytes captured (12128 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 38100 (38100), Seq: 1, Ack: 492, Len: 1448
+    Source Port: 80
+    Destination Port: 38100
+    [Stream index: 0]
+    [TCP Segment Len: 1448]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 1449    (relative sequence number)]
+    Acknowledgment number: 492    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 235
+    [Calculated window size: 30080]
+    [Window size scaling factor: 128]
+    Checksum: 0xd100 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    TCP segment data (1448 bytes)
+
+     11 2017-01-18 16:21:55.135684101 130.236.187.240       128.119.245.12        TCP      68     38100 → 80 [ACK] Seq=492 Ack=1449 Win=32128 Len=0 TSval=500516 TSecr=3108650165
+
+Frame 11: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38100 (38100), Dst Port: 80 (80), Seq: 492, Ack: 1449, Len: 0
+    Source Port: 38100
+    Destination Port: 80
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 492    (relative sequence number)
+    Acknowledgment number: 1449    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 251
+    [Calculated window size: 32128]
+    [Window size scaling factor: 128]
+    Checksum: 0xb487 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+
+     12 2017-01-18 16:21:55.135828406 128.119.245.12        130.236.187.240       TCP      1516   [TCP segment of a reassembled PDU]
+
+Frame 12: 1516 bytes on wire (12128 bits), 1516 bytes captured (12128 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 38100 (38100), Seq: 1449, Ack: 492, Len: 1448
+    Source Port: 80
+    Destination Port: 38100
+    [Stream index: 0]
+    [TCP Segment Len: 1448]
+    Sequence number: 1449    (relative sequence number)
+    [Next sequence number: 2897    (relative sequence number)]
+    Acknowledgment number: 492    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 235
+    [Calculated window size: 30080]
+    [Window size scaling factor: 128]
+    Checksum: 0xdc1f [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    [Reassembled PDU in frame: 14]
+    TCP segment data (1448 bytes)
+
+     13 2017-01-18 16:21:55.135840348 130.236.187.240       128.119.245.12        TCP      68     38100 → 80 [ACK] Seq=492 Ack=2897 Win=35072 Len=0 TSval=500516 TSecr=3108650165
+
+Frame 13: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38100 (38100), Dst Port: 80 (80), Seq: 492, Ack: 2897, Len: 0
+    Source Port: 38100
+    Destination Port: 80
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 492    (relative sequence number)
+    Acknowledgment number: 2897    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 274
+    [Calculated window size: 35072]
+    [Window size scaling factor: 128]
+    Checksum: 0xb487 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+
+     14 2017-01-18 16:21:55.135846818 128.119.245.12        130.236.187.240       HTTP     2033   HTTP/1.1 200 OK  (text/html)
+
+Frame 14: 2033 bytes on wire (16264 bits), 2033 bytes captured (16264 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 38100 (38100), Seq: 2897, Ack: 492, Len: 1965
+    Source Port: 80
+    Destination Port: 38100
+    [Stream index: 0]
+    [TCP Segment Len: 1965]
+    Sequence number: 2897    (relative sequence number)
+    [Next sequence number: 4862    (relative sequence number)]
+    Acknowledgment number: 492    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 235
+    [Calculated window size: 30080]
+    [Window size scaling factor: 128]
+    Checksum: 0xbc34 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+    TCP segment data (1965 bytes)
+[3 Reassembled TCP Segments (4861 bytes): #10(1448), #12(1448), #14(1965)]
+Hypertext Transfer Protocol
+    HTTP/1.1 200 OK\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 200 OK\r\n]
+        Request Version: HTTP/1.1
+        Status Code: 200
+        Response Phrase: OK
+    Date: Wed, 18 Jan 2017 15:21:55 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 mod_perl/2.0.10 Perl/v5.16.3\r\n
+    Last-Modified: Wed, 18 Jan 2017 06:59:02 GMT\r\n
+    ETag: "1194-54658f3a22c2f"\r\n
+    Accept-Ranges: bytes\r\n
+    Content-Length: 4500\r\n
+    Keep-Alive: timeout=5, max=100\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=UTF-8\r\n
+    \r\n
+    [HTTP response 1/2]
+    [Time since request: 0.112878314 seconds]
+    [Request in frame: 8]
+    [Next request in frame: 16]
+    [Next response in frame: 17]
+Line-based text data: text/html
+    <html><head> \n
+    <title>Historical Documents:THE BILL OF RIGHTS</title></head>\n
+    \n
+    \n
+    <body bgcolor="#ffffff" link="#330000" vlink="#666633">\n
+    <p><br>\n
+    </p>\n
+    <p></p><center><b>THE BILL OF RIGHTS</b><br>\n
+      <em>Amendments 1-10 of the Constitution</em>\n
+    </center>\n
+    \n
+    <p>The Conventions of a number of the States having, at the time of adopting\n
+    the Constitution, expressed a desire, in order to prevent misconstruction\n
+    or abuse of its powers, that further declaratory and restrictive clauses\n
+    should be added, and as extending the ground of public confidence in the\n
+    Government will best insure the beneficent ends of its institution; </p><p>  Resolved, by the Senate and House of Representatives of the United\n
+    States of America, in Congress assembled, two-thirds of both Houses concurring,\n
+    that the following articles be proposed to the Legislatures of the several\n
+    States, as amendments to the Constitution of the United States; all or any\n
+    of which articles, when ratified by three-fourths of the said Legislatures,\n
+    to be valid to all intents and purposes as part of the said Constitution,\n
+    namely:    </p><p><a name="1"><strong><h3>Amendment I</h3></strong></a>\n
+    \n
+    <p></p><p>Congress shall make no law respecting an establishment of\n
+    religion, or prohibiting the free exercise thereof; or\n
+    abridging the freedom of speech, or of the press; or the\n
+    right of the people peaceably to assemble, and to petition\n
+    the government for a redress of grievances.\n
+    \n
+    </p><p><a name="2"><strong><h3>Amendment II</h3></strong></a>\n
+    \n
+    <p></p><p>A well regulated militia, being necessary to the security\n
+    of a free state, the right of the people to keep and bear\n
+    arms, shall not be infringed.\n
+    \n
+    </p><p><a name="3"><strong><h3>Amendment III</h3></strong></a>\n
+    \n
+    <p></p><p>No soldier shall, in time of peace be quartered in any house,\n
+    without the consent of the owner, nor in time of war, but\n
+    in a manner to be prescribed by law.\n
+    \n
+    </p><p><a name="4"><strong><h3>Amendment IV</h3></strong></a>\n
+    \n
+    <p></p><p>The right of the people to be secure in their persons, houses,\n
+    papers, and effects, against unreasonable searches and seizures,\n
+    shall not be violated, and no warrants shall issue, but upon\n
+    probable cause, supported by oath or affirmation, and\n
+    particularly describing the place to be searched, and the\n
+    persons or things to be seized.\n
+    \n
+    </p><p><a name="5"><strong><h3>Amendment V</h3></strong></a>\n
+    \n
+    <p></p><p>No person shall be held to answer for a capital, or otherwise\n
+    infamous crime, unless on a presentment or indictment of a grand\n
+    jury, except in cases arising in the land or naval forces,\n
+    or in the militia, when in actual service in time of war\n
+    or public danger; nor shall any person be subject for the\n
+    same offense to be twice put in jeopardy of life or limb;\n
+    nor shall be compelled in any criminal case to be a witness\n
+    against himself, nor be deprived of life, liberty, or property,\n
+    without due process of law; nor shall private property be\n
+    taken for public use, without just compensation.\n
+    \n
+    </p><p><a name="6"><strong><h3>Amendment VI</h3></strong></a>\n
+    \n
+    <p></p><p>In all criminal prosecutions, the accused shall enjoy the right\n
+    to a speedy and public trial, by an impartial jury of the state\n
+    and district wherein the crime shall have been committed, which\n
+    district shall have been previously ascertained by law, and\n
+    to be informed of the nature and cause of the accusation;\n
+    to be confronted with the witnesses against him; to have\n
+    compulsory process for obtaining witnesses in his favor,\n
+    and to have the assistance of counsel for his defense.\n
+    \n
+    </p><p><a name="7"><strong><h3>Amendment VII</h3></strong></a>\n
+    \n
+    <p></p><p>In suits at common law, where the value in controversy shall\n
+    exceed twenty dollars, the right of trial by jury shall be\n
+    preserved, and no fact tried by a jury, shall be otherwise\n
+    reexamined in any court of the United States, than according\n
+    to the rules of the common law.\n
+    \n
+    </p><p><a name="8"><strong><h3>Amendment VIII</h3></strong></a>\n
+    \n
+    <p></p><p>Excessive bail shall not be required, nor excessive fines\n
+    imposed, nor cruel and unusual punishments inflicted.\n
+    \n
+    </p><p><a name="9"><strong><h3>Amendment IX</h3></strong></a>\n
+    \n
+    <p></p><p>The enumeration in the Constitution, of certain rights, shall\n
+    not be construed to deny or disparage others retained by the people.\n
+    \n
+    </p><p><a name="10"><strong><h3>Amendment X</h3></strong></a>\n
+    \n
+    <p></p>\n
+    <p>The powers not delegated to the United States by the Constitution, nor prohibited \n
+      by it to the states, are reserved to the states respectively, or to the people.</p>\n
+    </body></html>
+
+     15 2017-01-18 16:21:55.135857833 130.236.187.240       128.119.245.12        TCP      68     38100 → 80 [ACK] Seq=492 Ack=4862 Win=39040 Len=0 TSval=500516 TSecr=3108650166
+
+Frame 15: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38100 (38100), Dst Port: 80 (80), Seq: 492, Ack: 4862, Len: 0
+    Source Port: 38100
+    Destination Port: 80
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 492    (relative sequence number)
+    Acknowledgment number: 4862    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 305
+    [Calculated window size: 39040]
+    [Window size scaling factor: 128]
+    Checksum: 0xb487 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+
+     16 2017-01-18 16:21:55.157516165 130.236.187.240       128.119.245.12        HTTP     530    GET /favicon.ico HTTP/1.1 
+
+Frame 16: 530 bytes on wire (4240 bits), 530 bytes captured (4240 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38100 (38100), Dst Port: 80 (80), Seq: 492, Ack: 4862, Len: 462
+    Source Port: 38100
+    Destination Port: 80
+    [Stream index: 0]
+    [TCP Segment Len: 462]
+    Sequence number: 492    (relative sequence number)
+    [Next sequence number: 954    (relative sequence number)]
+    Acknowledgment number: 4862    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 305
+    [Calculated window size: 39040]
+    [Window size scaling factor: 128]
+    Checksum: 0xb655 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+Hypertext Transfer Protocol
+    GET /favicon.ico HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /favicon.ico HTTP/1.1\r\n]
+        Request Method: GET
+        Request URI: /favicon.ico
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    Pragma: no-cache\r\n
+    Cache-Control: no-cache\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/55.0.2883.87 Chrome/55.0.2883.87 Safari/537.36\r\n
+    Accept: image/webp,image/*,*/*;q=0.8\r\n
+    Referer: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8,sv;q=0.6\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/favicon.ico]
+    [HTTP request 2/2]
+    [Prev request in frame: 8]
+    [Response in frame: 17]
+
+     17 2017-01-18 16:21:55.269635742 128.119.245.12        130.236.187.240       HTTP     552    HTTP/1.1 404 Not Found  (text/html)
+
+Frame 17: 552 bytes on wire (4416 bits), 552 bytes captured (4416 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 38100 (38100), Seq: 4862, Ack: 954, Len: 484
+    Source Port: 80
+    Destination Port: 38100
+    [Stream index: 0]
+    [TCP Segment Len: 484]
+    Sequence number: 4862    (relative sequence number)
+    [Next sequence number: 5346    (relative sequence number)]
+    Acknowledgment number: 954    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 243
+    [Calculated window size: 31104]
+    [Window size scaling factor: 128]
+    Checksum: 0xee47 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+Hypertext Transfer Protocol
+    HTTP/1.1 404 Not Found\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 404 Not Found\r\n]
+        Request Version: HTTP/1.1
+        Status Code: 404
+        Response Phrase: Not Found
+    Date: Wed, 18 Jan 2017 15:21:55 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 mod_perl/2.0.10 Perl/v5.16.3\r\n
+    Content-Length: 209\r\n
+    Keep-Alive: timeout=5, max=99\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=iso-8859-1\r\n
+    \r\n
+    [HTTP response 2/2]
+    [Time since request: 0.112119577 seconds]
+    [Prev request in frame: 8]
+    [Prev response in frame: 14]
+    [Request in frame: 16]
+Line-based text data: text/html
+    <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">\n
+    <html><head>\n
+    <title>404 Not Found</title>\n
+    </head><body>\n
+    <h1>Not Found</h1>\n
+    <p>The requested URL /favicon.ico was not found on this server.</p>\n
+    </body></html>\n
+
+     18 2017-01-18 16:21:55.307640820 130.236.187.240       128.119.245.12        TCP      68     38100 → 80 [ACK] Seq=954 Ack=5346 Win=41856 Len=0 TSval=500559 TSecr=3108650300
+
+Frame 18: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38100 (38100), Dst Port: 80 (80), Seq: 954, Ack: 5346, Len: 0
+    Source Port: 38100
+    Destination Port: 80
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 954    (relative sequence number)
+    Acknowledgment number: 5346    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 327
+    [Calculated window size: 41856]
+    [Window size scaling factor: 128]
+    Checksum: 0xb487 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+
+     22 2017-01-18 16:21:57.623957584 172.217.22.174        130.236.187.240       TLSv1.2  131    Application Data
+
+Frame 22: 131 bytes on wire (1048 bits), 131 bytes captured (1048 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 172.217.22.174, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 443 (443), Dst Port: 41608 (41608), Seq: 1, Ack: 1, Len: 63
+    Source Port: 443
+    Destination Port: 41608
+    [Stream index: 1]
+    [TCP Segment Len: 63]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 64    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 350
+    [Calculated window size: 350]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0x516b [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+Secure Sockets Layer
+
+     23 2017-01-18 16:21:57.624009873 130.236.187.240       172.217.22.174        TCP      68     41608 → 443 [ACK] Seq=1 Ack=64 Win=237 Len=0 TSval=501138 TSecr=2180949725
+
+Frame 23: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 172.217.22.174
+Transmission Control Protocol, Src Port: 41608 (41608), Dst Port: 443 (443), Seq: 1, Ack: 64, Len: 0
+    Source Port: 41608
+    Destination Port: 443
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Acknowledgment number: 64    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 237
+    [Calculated window size: 237]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0x028b [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+
+     24 2017-01-18 16:21:57.624018488 172.217.22.174        130.236.187.240       TCP      68     443 → 41608 [FIN, ACK] Seq=64 Ack=1 Win=350 Len=0 TSval=2180949726 TSecr=441136
+
+Frame 24: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 172.217.22.174, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 443 (443), Dst Port: 41608 (41608), Seq: 64, Ack: 1, Len: 0
+    Source Port: 443
+    Destination Port: 41608
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 64    (relative sequence number)
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x011 (FIN, ACK)
+    Window size value: 350
+    [Calculated window size: 350]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0x85e5 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+
+     25 2017-01-18 16:21:57.624381594 130.236.187.240       172.217.22.174        TCP      68     41608 → 443 [FIN, ACK] Seq=1 Ack=65 Win=237 Len=0 TSval=501138 TSecr=2180949726
+
+Frame 25: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 172.217.22.174
+Transmission Control Protocol, Src Port: 41608 (41608), Dst Port: 443 (443), Seq: 1, Ack: 65, Len: 0
+    Source Port: 41608
+    Destination Port: 443
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Acknowledgment number: 65    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x011 (FIN, ACK)
+    Window size value: 237
+    [Calculated window size: 237]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0x028b [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+
+     26 2017-01-18 16:21:57.628762915 172.217.22.174        130.236.187.240       TCP      68     443 → 41608 [ACK] Seq=65 Ack=2 Win=350 Len=0 TSval=2180949730 TSecr=501138
+
+Frame 26: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 172.217.22.174, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 443 (443), Dst Port: 41608 (41608), Seq: 65, Ack: 2, Len: 0
+    Source Port: 443
+    Destination Port: 41608
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 65    (relative sequence number)
+    Acknowledgment number: 2    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 350
+    [Calculated window size: 350]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0x9b7d [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+
+     27 2017-01-18 16:21:57.665887484 216.58.211.142        130.236.187.240       TLSv1.2  131    Application Data
+
+Frame 27: 131 bytes on wire (1048 bits), 131 bytes captured (1048 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 216.58.211.142, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 443 (443), Dst Port: 42200 (42200), Seq: 1, Ack: 1, Len: 63
+    Source Port: 443
+    Destination Port: 42200
+    [Stream index: 2]
+    [TCP Segment Len: 63]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 64    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 350
+    [Calculated window size: 350]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0x3dbe [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+Secure Sockets Layer
+
+     28 2017-01-18 16:21:57.665925932 216.58.211.142        130.236.187.240       TCP      68     443 → 42200 [FIN, ACK] Seq=64 Ack=1 Win=350 Len=0 TSval=2176803407 TSecr=441147
+
+Frame 28: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 216.58.211.142, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 443 (443), Dst Port: 42200 (42200), Seq: 64, Ack: 1, Len: 0
+    Source Port: 443
+    Destination Port: 42200
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 64    (relative sequence number)
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x011 (FIN, ACK)
+    Window size value: 350
+    [Calculated window size: 350]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0xc7b9 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+
+     29 2017-01-18 16:21:57.666256273 130.236.187.240       216.58.211.142        TCP      68     42200 → 443 [FIN, ACK] Seq=1 Ack=65 Win=237 Len=0 TSval=501148 TSecr=2176803407
+
+Frame 29: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 216.58.211.142
+Transmission Control Protocol, Src Port: 42200 (42200), Dst Port: 443 (443), Seq: 1, Ack: 65, Len: 0
+    Source Port: 42200
+    Destination Port: 443
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Acknowledgment number: 65    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x011 (FIN, ACK)
+    Window size value: 237
+    [Calculated window size: 237]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0xeacc [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]
+
+     30 2017-01-18 16:21:57.670745741 216.58.211.142        130.236.187.240       TCP      68     443 → 42200 [ACK] Seq=65 Ack=2 Win=350 Len=0 TSval=2176803412 TSecr=501148
+
+Frame 30: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 216.58.211.142, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 443 (443), Dst Port: 42200 (42200), Seq: 65, Ack: 2, Len: 0
+    Source Port: 443
+    Destination Port: 42200
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 65    (relative sequence number)
+    Acknowledgment number: 2    (relative ack number)
+    Header Length: 32 bytes
+    Flags: 0x010 (ACK)
+    Window size value: 350
+    [Calculated window size: 350]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0xdd51 [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+    [SEQ/ACK analysis]

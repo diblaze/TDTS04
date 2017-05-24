@@ -1,0 +1,86 @@
+\documentclass{mall}
+\usepackage{tikz}
+\newcommand{\version}{Version 1.0}
+\author{Christer Vesterlund, \url{chrve180@student.liu.se}\\
+  Denis I. Blazevic \url{denbl369@student.liu.se}}
+\title{Assignment 2: Net Ninny}
+\date{2017-02-05}
+\rhead{Christer Vesterlund\\Denis I. Blazevic}
+
+\begin{document}
+\projectpage
+\tableofcontents
+\newpage 
+
+\section{User manual} 
+
+\subsection{Set-up and installation}
+\subsubsection{Which Ruby version?}
+Our proxy is implemented in Ruby 2.3 but runs in any ruby version above 1.9. To ensure that you have the right version installed, start up your terminal and type:
+\begin{verbatim}
+$ ruby -v
+ruby 2.3.1p112 (2016-04-26) [x86_64-linux-gnu]
+\end{verbatim}
+If your version is at least over 1.9, then you can use the proxy.\\
+\subsubsection{Starting the proxy}
+To start the proxy you will need to open up the folder where the source files are located in a terminal emulator. To start the proxy on its default port (2000), run the following command:
+\begin{verbatim}
+$ ruby proxy.rb
+\end{verbatim}
+This will start the proxy on the default port (2000).
+\\
+To specify a port for the proxy to run on, simply run the following command where you replace [port] for the port you want:
+\begin{verbatim}
+$ ruby proxy.rb [port]
+\end{verbatim}
+\subsubsection{Configuring Firefox}
+To configure Firefox to use the proxy, make sure to do the following steps. 
+\begin{enumerate}
+	\item Open Firefox \textbf{``Preferences''}.
+	\item On the left side of your browser, click on \textbf{``Advanced''}.
+	\item Click on \textbf{``Network''}.
+	\item Press on \textbf{``Settings...''} right next to the \textbf{``Connection''}.
+	\item Make sure \textbf{``Manual proxy configuration''} is \textbf{ticked}.
+	\item In the text field \textbf{``HTTP Proxy''}, type \textbf{``127.0.0.1''}
+	\item In the \textbf{``Port''} field, input the port the proxy was started with (default port is 2000 for the proxy).
+	\item Make sure \textbf{``Use this proxy for all protocols''} is \textbf{unticked}.
+\end{enumerate}
+
+You can now enjoy the security of the proxy.
+
+\pagebreak
+\subsection{Features}
+Our goal for this assignment was to fulfill the requirements. There were a total of nine requirements, and one which was optional.
+\begin{enumerate}
+\item The proxy should support both HTTP/1.0 and HTTP/1.1.
+\item Handles simple HTTP GET interactions between client and server.
+\item Blocks requests for undesirable URLs, using HTTP redirection to display error page instead.
+\item Detects inappropriate content bytes within a Web page before it is returned to the user, and redirecting to error page.
+\item Imposes no limit on the size of the transferred HTTP data.
+\item Is compatible with all major browsers, without the requirement to tweak any advanced feature
+\item Allows the user to select the proxy port at startup (i.e. the port number should not be hard coded).
+\item Is smart in selection of what HTTP content should be searched for the forbidden keywords.
+\item (Optional) Supporting file upload using the POST method.\\
+\end{enumerate}
+\setlength{\parindent}{0mm}
+Number 6 in the requirements has not fully been tested. Chromium and Firefox has been tested, but not Internet Explorer/Edge.\\
+Number 9 has not been implemented and therefore not tested. Our proxy only works with \textbf{``GET''} requests.
+
+\section{Proxy testing}
+The Net Ninny Ruby proxy was being tested continuously while developed by us. At first we made a simple socket server and socket client in C++ to learn how sockets works. The C++ proxy was more "learn by doing" because we couldn't find any ``good'' enough information on how to program sockets in C++. While the C++ proxy was developed we used the "console log" debug method, outputting any information to the console while testing. This gave us information on how the HTTP headers are constructed (which the RFC confirmed was correct) and how the servers communicate at connection, transfer and disconnection.\\
+After the C++ simple server and client was finished, we moved on to Ruby for the actual proxy we wanted to get more knowledge of Ruby. This is where we started to test the RegEX capture strings for various of HTTP headers and URLs. When we found working capture strings for every text data we needed to search through, the actual work on Client-Proxy-Server started. Because we had the C++ version we easily rewrote the code into Ruby.\\
+
+We managed to get video streaming somewhat working, Dailymotion works for standard quality but not for HD quality. By ``somewhat working'', we mean some video streaming web pages doesn't work and we can not find the issue e.g Aftonbladet TV is not working but Dailymotion is.
+\newpage
+
+\section{Summary}
+The Net Ninny Ruby proxy is an HTTP proxy that works with HTTP 1.0 aswell as HTTP 1.1, but the proxy only works with regular HTTP ``GET'' requests. We did not implement HTTPS or ``POST'' requests. The main reasons for this is that the majority of the http request sent by the browser is a ``GET'' request and very few are in fact ``POST'' requests.\\
+
+The proxy works by first accepting connections from the browser used (in our case Firefox or Chromium) into a new socket connection that is threaded off into a separate thread. This makes it possible to have multiple connections working at the same time. The Net Ninny is also capable of filtering url's and page contents for inappropriate words.\\
+
+One thing that we have been working on and tried to resolve is streaming video at ``www.aftonbladet.se''. We have tried many types of solutions, but none of them solved our problem. The strange thing is that steaming works at ``www.dailymotion.com'' (it's very slow, but it works). The biggest question mark we have is why streaming works on one site but not the other?! This remains to be solved.\\
+
+Overall this proxy is very limited and lacks streaming support at ``www.aftonbladet.se'', but this have been a very fun assignment and a big learning experience especially the sockets part of the assignment.
+
+\end{document}
+ 

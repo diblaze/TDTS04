@@ -1,0 +1,215 @@
+﻿REF:
+maximum segment size = MSS (The MSS is typically set by first determining the length of the largest link-layer frame that can be sent by the local sending host) maximum transmission unit = MTU
+when transfer a large file, breaks up in chunks of MSS except for the last one.
+If a file = 500 000 and mss = 1000 gives 500 segments. The first seg get seq nr 0. the 2:e get seq nr 1000 3:e 2000…..
+
+Host A has received one segment from Host B containing bytes 0 through 535 and another segment containing bytes 900 through 1,000. For some reason Host A has not yet received bytes 536 through 899. Host A is still waiting for byte 536 (and beyond) in order to re-create B’s data stream. Thus, A’s next segment to B will contain 536 in the acknowledgment number field. Because TCP only acknowledges bytes up to the first missing byte in the stream, TCP is said to provide cumulative acknowledgments.
+
+
+Flag field: 6 bits. ACK part indicate valid. RST, SYN, FIN are for con setup and tear down. PSH says to send it directly to the upper layer. URG it urgent 
+
+Sequence and Acknowledgment nubers:
+sequence numbers reflects this view in that sequence numbers are over the stream of transmitted bytes and not over the series of transmitted segments. → byte-stream number of the first byte in the segment.
+
+connection is referred to as a three-way handshake.
+
+Timeout and retransmit:
+Should be greater than RTT. 
+EstimatedRTT = (1 – a) * EstimatedRTT + a * SampleRTT
+recommended a = 0.125 → Est = 0.875 * Est + 0.125 * Samp
+Timeout interval not much bigger than Est plus some small margin
+TimeoutInterval = EstimatedRTT + 4 * DevRTT (variation over time)
+1 sec is recommended, but when to occur this is doubled
+When no ack comes retransmit segment
+
+Fast retransmit:
+If receive 3 or more acks, retrarnsmitts the missing segments before timer expire
+
+Flow control:
+eliminate the possibility of the sender overflowing the receiver’s buffer
+matching the rate at which the sender is sending against the rate at which the
+receiving application is reading.
+TCP sender can also be throttled due to congestion within the IP network; this form of sender control is referred to as congestion control.
+TCP provides flow control by having the sender maintain a variable called the
+receive window. The receive window is used to give the sender an idea of
+how much free buffer space is available at the receiver.
+The receive window, denoted rwnd is set to the amount of spare room in the buffer: rwnd = RcvBuffer – [LastByteRcvd – LastByteRead], rwnd is dynamic
+
+client send a syn + init seq nr → server
+server rec this and set syn bit to 1 and sets client_isn+1. Server add a own seq nr-
+client rec synack and allocate buffer and sends a ack with server_isn+1
+ 
+1. What are the first and last packets for the POST request?
+starts 4 ends at 5
+-------------
+2. What is the IP address and the TCP port used by the client computer (source) that is transferring the file to gaia.cs.umass.edu?
+Source: 192.168.1.102 port 1161
+---------------
+
+3. What is the IP address of gaia.cs.umass.edu? On what port number is it sending and receiving TCP segments for this connection?
+128.119.245.12 port 80
+----------------
+4. What is the sequence number of the TCP SYN segment that is used to initiate the TCP connection between the client computer and gaia.cs.umass.edu? What is it in the segment that identifies the segment as a SYN segment?
+
+The sequence number is 0
+The SYN flag for this segment has been set to 1. 
+-------------
+5. What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to the client computer in reply to the SYN? What is the value of the ACKnowledgement field in the SYNACK segment? How did gaia.cs.umass.edu determine that value? What is it in the segment that identifies the segment as a SYNACK segment?
+
+The sequence number is still 0???
+    Sequence number: 0    (relative sequence number)
+    Acknowledgment number: 1    (relative ack number)
+gaia increments this value by 1 and copies it to the acknowledgement field.
+
+
+The flag has been set to syn + ack
+
+    Flags: 0x012 (SYN, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 0... = Push: Not set
+        .... .... .0.. = Reset: Not set
+        .... .... ..1. = Syn: Set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: *******A**S*]
+-----------------------
+6. What is the sequence number of the TCP segment containing the HTTP POST command?
+It can be found in packet 4. 
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 566    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+------------------------
+7. Consider the TCP segment containing the HTTP POST as the first segment in the TCP connection. What are the sequence numbers of the first six segments in the TCP connection (including the segment containing the HTTP POST)? At what time was each segment sent? 
+nr  seg         time
+4.  1       : 2004-08-21 15:44:20.596858 <- this one contains the http POST
+5.  566     : 2004-08-21 15:44:20.612118 
+7.  2026    : 2004-08-21 15:44:20.624407
+8.  3486    : 2004-08-21 15:44:20.625071
+10. 4946    : 2004-08-21 15:44:20.647786
+11. 6406    : 2004-08-21 15:44:20.648538
+13. 7866    : 2004-08-21 15:44:20.694566
+
+When was the ACK for each segment received? 
+6.	2004-08-21 15:44:20.624318	[ACK] Seq=1 Ack=566 Win=6780 Len=0
+9.	2004-08-21 15:44:20.647675	[ACK] Seq=1 Ack=2026 Win=8760 Len=0
+12.	2004-08-21 15:44:20.694466	[ACK] Seq=1 Ack=3486 Win=11680 Len=0
+14.	2004-08-21 15:44:20.739499	[ACK] Seq=1 Ack=4946 Win=14600 Len=0
+15.	2004-08-21 15:44:20.787680	[ACK] Seq=1 Ack=6406 Win=17520 Len=0
+16. 2004-08-21 15:44:20.838183	[ACK] Seq=1 Ack=7866 Win=20440 Len=0
+
+Given the difference between when each TCP segment was sent, and when its acknowledgement was received, what is the RTT value for each of the six segments? 
+FEL räkna
+nr
+5-6     RTT = 0.0122
+7-9     RTT = 0.0233
+8-12    RTT = 0.0694
+10-14   RTT = 0.0917
+11-15   RTT = 0.1391
+13-16   RTT = 0,1436
+
+What is the EstimatedRTT value (see page 277 in text) after the receipt of each ACK? Assume that the value of the EstimatedRTT is equal to the measured RTT for the first segment, and then is computed using the EstimatedRTT equation on page 277 for all subsequent segments.
+
+EstimatedRTT = (1 - alpha) • EstimatedRTT(previous) + alpha * SampleRTT
+0 < alpha < 1; 
+typical value: alpha = 0.125 (1-0.125)=>0,875
+1. EstimatedRTT = (1-0.125) * 0.0122 + 0.125 * 0.0122 => 0,010675 + 0,001525 => 0,0122
+2. EstimatedRTT = 0,875 * 0,0122 + 0.125 * 0.0233 = 0,0136
+3. EstimatedRTT = 0,875 * 0,0136 + 0.125 * 0.0694 = 0,0206
+4. EstimatedRTT = 0,875 * 0,0206 + 0.125 * 0.0917 = 0,0295
+5. EstimatedRTT = 0,875 * 0,0295 + 0.125 * 0.1391 = 0,0432
+6. EstimatedRTT = 0,875 * 0,0432 + 0.125 * 0,1436 = 0,0558
+
+-----------------------------
+8. What is the length of each of the first six TCP segments?
+1460 bytes + header size 54 bytes
+
+-----------------------------
+9. What is the minimum amount of available buffer space advertised at the receiver for the entire trace? Does the lack of receiver buffer space ever throttle the sender?
+
+The window size tells the client how much it can send in the tcp header (Window size value: 5840). No it dosent, the package never goes over 1460 b.
+
+the window size is the amount of data that TCP can transmit without having to receive any acknowledgement from the receiver.
+
+-----------------------------
+10. Are there any retransmitted segments in the trace file? What did you check for (in the trace) in order to answer this question?
+
+I cant find any retransmitted segments. If there were any retransmitted seg, we would have seen [TCP Retransmission]
+-----------------------------
+11. How much data does the receiver typically acknowledge in an ACK? Can you identify cases where the receiver is ACKing every other received segment 
+look at frame 9 and frame 12, 9 ack for 2026 and 12 for 3486. 3486-2026= 1460
+ 
+In nr 69-71 we can see that the server dosent ack every package.
+-----------------------------
+12
+
+
+-----------------------------
+13. For each of the two traces, can you identify where TCP's slow start phase begins and ends, and where congestion avoidance takes over?
+
+In the first file we can see the slow-start only last in the first 0-0.15 s. Then it stops and send 5 packages at the time, wich means that congestion avoidance takes over and the window is significantly larger than 5 packets.
+
+In the other file we can see that there is an slow-start in every congestion window?!???
+
+13 Other file
+Use the Time-Sequence-Graph (Stevens) plotting tool to view the sequence number versus time plot of segments being sent from the client to the server (Figure 2a and Figure 2b). For each of the two traces, can you identify where TCP's slow start phase begins and ends, and where congestion avoidance takes over? If you can, explain how. If not, explain why not. To better identify these phases, you may need to find the number of unacknowledged packets (or bytes) at different times and plot the unacknowledged packets (y-axis) as a function of time (x-axis). Note that the number of unacknowledged packets at different times can be found by comparing the number of packets that have been sent with the number of packets that have been acknowledged. After plotting the number of unacknowledged packets versus time, comment on ways in which the measured data differs from the idealized behavior of TCP that we've studied in the text.
+
+
+
+
+
+-------------------------------
+
+14. Explain the relationship between (i) the congestion window, (ii) the receiver advertised window, (iii) the number of unacknowledged bytes, and (iv) the effective window at the sender.
+
+The receive window is managed by the receiver, who sends out window sizes to the sender. The window sizes announce the number of bytes still free in the receiver buffer, i.e. the number of bytes the sender can still send without needing an acknowledgement from the receiver.
+
+The congestion window is a sender window is to avoid overrunning routers in the middle of the network. If the sender detects packet loss, it will cut the window size in half. This is to prevent more package loss over time
+
+The congestion window is a sender imposed window that was implemented to avoid overrunning some routers in the middle of the network path.But  The rationale behind this is that the sender assumes that packet loss has occurred because of a buffer overflow somewhere (which is almost always true), so the sender wants to keep less data "in flight" to avoid further packet loss in the future.
+-------------------------------
+15. Is it generally possible to find the congestion window size (i.e. cwnd) and how it changes with time, from the captured trace files? If so, please explain how. If not, please explain when and when not.
+
+No not directly, but if you look st the graph (stevens) cwnd get longer and longer
+
+CONGESTION WINDOW (cwnd):  A TCP state variable that limits the
+      amount of data a TCP can send.  At any given time, a TCP MUST NOT
+      send data with a sequence number higher than the sum of the
+      highest acknowledged sequence number and the minimum of cwnd and
+      rwnd.
+
+The CWND is just an internal variable on the sender side to manage the amount of bytes that it is allowed to send at any time. The value of CWND is calculated according to a certain algorithm (see the RFC). Basically the value is increased for every 'good' ACK (in time, not duplicate) and decreased for a 'bad' ACK (timeout, DUP ACK). So, during a TCP connection the value of CWND is somewhere between a defined start value (depends on the algorithm) and the Receiver Window Size (RWND), as advertized by the receiver.
+
+
+-------------------------------
+16. What is the throughput of each of the connections in bps (bits per second)? What is the total bandwidth of the host on which the clients are running? Discuss the TCP fairness for this case.
+
+
+
+-------------------------------
+17. What is the throughput of each of the connections in bps (bits per second)? What is the total bandwidth of the host on which the clients are running? Discuss the TCP fairness for this case.
+
+
+
+
+------------------------------
+18. Discuss the TCP fairness for this case. 
+
+
+
+
+------------------------------
+
+
+
+
+TCP's Congestion Window Size
+An intuitive definition of the Congestion Window Size is the amount of data that the sender can inject into the network without causing congestion in the network.
+Notice that this amount of data varies over time (it depends on the current network status - it changes like the weather and it is just as unpredictable....)
+
+
+
+

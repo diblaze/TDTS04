@@ -1,0 +1,48 @@
+     33 2017-01-18 16:13:33.375934697 130.236.187.240       128.119.245.12        HTTP     628    GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1 
+
+Frame 33: 628 bytes on wire (5024 bits), 628 bytes captured (5024 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 130.236.187.240, Dst: 128.119.245.12
+Transmission Control Protocol, Src Port: 38082 (38082), Dst Port: 80 (80), Seq: 1, Ack: 1, Len: 560
+Hypertext Transfer Protocol
+    GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n]
+        Request Method: GET
+        Request URI: /wireshark-labs/HTTP-wireshark-file2.html
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    Cache-Control: max-age=0\r\n
+    Upgrade-Insecure-Requests: 1\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/55.0.2883.87 Chrome/55.0.2883.87 Safari/537.36\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n
+    Accept-Encoding: gzip, deflate, sdch\r\n
+    Accept-Language: en-US,en;q=0.8,sv;q=0.6\r\n
+    If-None-Match: "173-54658f3a266c8"\r\n
+    If-Modified-Since: Wed, 18 Jan 2017 06:59:02 GMT\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html]
+    [HTTP request 1/1]
+    [Response in frame: 35]
+
+     35 2017-01-18 16:13:33.488249024 128.119.245.12        130.236.187.240       HTTP     308    HTTP/1.1 304 Not Modified 
+
+Frame 35: 308 bytes on wire (2464 bits), 308 bytes captured (2464 bits) on interface 0
+Linux cooked capture
+Internet Protocol Version 4, Src: 128.119.245.12, Dst: 130.236.187.240
+Transmission Control Protocol, Src Port: 80 (80), Dst Port: 38082 (38082), Seq: 1, Ack: 561, Len: 240
+Hypertext Transfer Protocol
+    HTTP/1.1 304 Not Modified\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 304 Not Modified\r\n]
+        Request Version: HTTP/1.1
+        Status Code: 304
+        Response Phrase: Not Modified
+    Date: Wed, 18 Jan 2017 15:13:33 GMT\r\n
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 mod_perl/2.0.10 Perl/v5.16.3\r\n
+    Connection: Keep-Alive\r\n
+    Keep-Alive: timeout=5, max=100\r\n
+    ETag: "173-54658f3a266c8"\r\n
+    \r\n
+    [HTTP response 1/1]
+    [Time since request: 0.112314327 seconds]
+    [Request in frame: 33]

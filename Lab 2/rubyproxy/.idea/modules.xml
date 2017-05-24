@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/RubyProxy.iml" filepath="$PROJECT_DIR$/.idea/RubyProxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rubyproxy.iml" filepath="$PROJECT_DIR$/.idea/rubyproxy.iml" />
     </modules>
   </component>
 </project>
